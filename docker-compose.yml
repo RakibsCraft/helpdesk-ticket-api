@@ -1,0 +1,14 @@
+# Starts PostgreSQL with the tickets table already created.
+#   docker compose up -d     start it
+#   docker compose down      stop it
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: helpdesk
+      POSTGRES_PASSWORD: helpdesk
+      POSTGRES_DB: helpdesk
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
