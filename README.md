@@ -2,7 +2,7 @@
 
 ![Tests](https://github.com/RakibsCraft/helpdesk-ticket-api/actions/workflows/tests.yml/badge.svg)
 
-A REST API for an IT helpdesk. Users raise tickets, agents pick them up and work them through to resolution, and team leads see which tickets have missed their SLA.
+A REST API for an IT helpdesk, which I'm building milestone by milestone. Users raise tickets, agents pick them up and work them through to resolution, and team leads see which tickets have missed their SLA.
 
 I worked in technical support at Tesco Mobile and Infosys BPM, raising and tracking tickets in Zendesk against SLA and quality targets. This project builds the backend side of that workflow.
 
@@ -17,17 +17,6 @@ I worked in technical support at Tesco Mobile and Infosys BPM, raising and track
 - Filtering by status, priority and assignee
 - Reports on SLA breaches and ticket counts
 - Swappable storage: in-memory for development and tests, PostgreSQL for real use
-
-## Progress
-
-| Milestone | File | Tests | Status |
-|---|---|---|---|
-| 1. Input validation | `src/validation/validateTicket.js` | `test/validation.test.js` | Not started |
-| 2. Status rules | `src/services/statusTransitions.js` | `test/statusTransitions.test.js` | Not started |
-| 3. SLA calculation | `src/services/sla.js` | `test/sla.test.js` | Not started |
-| 4. Ticket service | `src/services/ticketService.js` | `test/ticketService.test.js` | Not started |
-| 5. HTTP routes | `src/routes/tickets.js`, `src/routes/reports.js` | `test/api.test.js` | Not started |
-| 6. PostgreSQL storage | `src/repositories/postgresTicketRepository.js` | `test/repository.test.js` | Not started |
 
 ## API
 
@@ -112,4 +101,4 @@ Without Docker, install PostgreSQL, create a database, run `db/schema.sql` again
 
 ## Testing
 
-Tests use Node's built-in test runner, so there's no extra test framework to install. Each milestone's test file has a `STARTED` switch at the top; tests for milestones not yet started are skipped. GitHub Actions runs every test, including the PostgreSQL ones against a real database, on each push.
+Tests use Node's built-in test runner, so there's no extra test framework to install. Each test file has a `STARTED` switch at the top; tests for parts not yet built are skipped. GitHub Actions runs every test, including the PostgreSQL ones against a real database, on each push.
